@@ -22,7 +22,7 @@
         progress (str passed "/" (+ passed failed))]
     (cond
       (and passed (zero? failed))
-      [:span {:style {:color "green"}} (str progress " Passed!")]
+      [:span {:style {:color "green"}} (str progress " 合格！")]
       (not (nil? passed)) progress
       :else "-")))
 
@@ -37,18 +37,18 @@
 
 (defn problem-list []
   [:<>
-   [:h3 "Problems "
+   [:h3 "問題 "
     [:small (str "(" (count data/problems) ")")]]
    (into [:table
           [:thead
            [:tr
             [:th {:on-click #(swap! sort-by-solved (fn [] nil))} "No."]
-            [:th "Name"]
-            [:th "Difficulty"]
+            [:th "名前"]
+            [:th "難易度"]
             [:th
              {:on-click #(swap! sort-by-solved not)}
-             (str "Status  " (case @sort-by-solved
-                               true "🠕" false "🠗" nil ""))]]]
+             (str "ステータス  " (case @sort-by-solved
+                              true "🠕" false "🠗" nil ""))]]]
           [:tbody
            (for [problem (sorted-problems)]
              ^{:key (:id problem)}
@@ -57,14 +57,15 @@
 (defn view []
   [:div
    [:p
-    "Keeping 4clojure alive forever! This website is completely static and evals
-     code using sci. Suggestions / PRs welcome at "
+    "4clojureは永遠に！このウェブサイトは完全に静的で、sciを使ってコードを検証しています。
+     提案やプルリクエストは"
     [:a {:href "https://github.com/oxalorg/4ever-clojure"}
-     "github.com/oxalorg/4ever-clojure"]]
+     "github.com/oxalorg/4ever-clojure"]
+    "まで！"]
    [:p
-    "Please note that 4ever-clojure is evaluated completely in the browser. So
-    not all Java interop works, but some of it is the same in JS if you're
-    lucky. Check "
+    "4ever-clojureは完全にブラウザで評価されることに注意してください。
+     そのため、すべてのJavaの相互運用がうまくいくわけではありませんが、運が良ければJSでも同じように使えるものもあります。
+     詳細は"
     [:a {:href "https://cljs.info/cheatsheet/"} "cljs-cheatsheet"]
-    " for more info!"]
+    "をチェックしてください！"]
    [problem-list]])

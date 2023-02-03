@@ -16,6 +16,6 @@
     [:div {:style modal-style}
      [:div {:style {:padding "0px 30px 20px 30px"}}
       children
-      [:button {:on-click on-close} "Close"]]]))
+      [:button {:on-click on-close} "閉じる"]]]))
 
 

@@ -12,7 +12,7 @@
                  :text-align "center"}}
    [:div {:style {:padding "0.5rem"}}
     [:small
-     "Solutions archive browsable from each problem page 🎉 Huge thanks to Alan!!"]]])
+     "各問題のページから解答アーカイブが閲覧できます🎉 Alanさんに大感謝です！"]]])
 
 (defn header []
   [:header
@@ -20,14 +20,17 @@
    [:p
     [:small
      [:a {:href (rfe/href :home)
-          :data-reitit-handle-click false} "home"]
+          :data-reitit-handle-click false} "ホーム"]
      " | "
-     [:a {:href "https://github.com/oxalorg/4ever-clojure"} "github"]
+     [:a {:href "https://github.com/oxalorg/4ever-clojure"} "GitHub"]
      " | "
-     "Built with ❤ by "
      [:a {:href "https://twitter.com/oxalorg"} "@oxalorg"]
-     " and "
-     [:a {:href "https://twitter.com/borkdude"} "@borkdude"]]]
+     "と"
+     [:a {:href "https://twitter.com/borkdude"} "@borkdude"]
+     "より❤を込めて"
+     " | "
+     "翻訳: "
+     [:a {:href "https://twitter.com/shirasawa_kento"} "@shirasawa_kento"]]]
    notification])
 
 (defn main []

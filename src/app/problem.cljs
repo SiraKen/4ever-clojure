@@ -68,8 +68,8 @@
        [render-result
         test-src
         (if passed?
-          [result-info-item "green" "🟢 pass"]
-          [result-info-item "red"   "🔴 uh-oh"])]))])
+          [result-info-item "green" "🟢 OK"]
+          [result-info-item "red"   "🔴 NG"])]))])
 
 (def run-button-style {:margin-top "1rem"})
 
@@ -117,7 +117,7 @@
          [test-list-section tests])
        (when (:restricted problem)
          [restricted-alert problem])
-       [:p "Write code which will fill in the above blanks:"]
+       [:p "上の空欄 (__)に入るコードを記述してください:"]
 
        ;; Force resetting editor state when input source code changed
        ;; e.g., when manually trigger run
@@ -129,10 +129,10 @@
                       :justify-content "space-between"}}
         [:button {:on-click on-run
                   :style run-button-style}
-         "Run"]
+         "実行"]
         [:button {:on-click #(reset! settings-modal-is-open true)
                   :style run-button-style}
-         "Settings"]]
+         "設定"]]
        [modal/box {:is-open settings-modal-is-open
                    :on-close settings-modal-on-close}
         [editor-settings/modal
@@ -141,15 +141,15 @@
            (reset! editor-extension-mode extension-mode))]]
        [:p {:style {:margin-top "1rem"}}
         [:small
-         "Alt+Enter will eval the local form in the editor box above. There are
-          lots of nifty such features and keybindings. More docs coming soon! (Try
-          playing with alt + arrows / ctrl + enter) in the meanwhile."]]
+         "Alt+Enterで上のエディタに入力した内容が評価されます。
+          このように、たくさんの便利な機能とキーバインドがあります。
+          近日中にドキュメントを公開します。 (その間、alt + arrows / Ctrl + enterで遊んでみてください) 。"]]
        [modal/box {:is-open success-modal-is-open
                    :on-close success-modal-on-close}
-        [:h4 (str "Congratulations on solving problem " "#" id "!")]
+        [:h4 (str "おめでとう！問題 " "#" id " をクリアしました！")]
         [:div
          [:p {:on-click #(reset! success-modal-is-open false)}
-          "Next problem "
+          "次の問題 "
           [:a {:href (state/href :problem/item {:id (:id next-prob)})}
            (str "#" (:id next-prob) " " (:title next-prob))]]]]])))
 
@@ -159,15 +159,15 @@
           solution (get @user-data id)
           {:keys [title description difficulty] :as problem} (get-problem id)]
       [:div
-       [:h3 "Problem " id ", " title]
+       [:h3 "問題 " id ", " title]
        [:div {:style {:margin-top "0.5rem" :margin-bottom "2rem"}}
-        [:b "Difficulty: "] difficulty]
+        [:b "難易度: "] difficulty]
        [:p description]
        ^{:key (str "problem-" id)}
        [user-code-section id problem solution]
        [:hr]
        [:p
-        "Want to see how others have solved this? "
+        "他の人がどのように解決したか見てみたいですか？"
         [:a {:href (state/href :solution/list {:id id})}
-         "View problem #" id " solutions archive"]
-        " No cheating please! :)"]])))
+         "問題 #" id " の解答アーカイブを見る"]
+        " ズルはナシですよ！ :)"]])))
