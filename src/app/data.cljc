@@ -24,58 +24,57 @@
     :tags []}
 
    {:id         4
-    :title       "リスト"
+    :title       "List"
     :tests       ["(= (list __) '(:a :b :c))"]
-    :description "リストは、関数または引用符 ( ' ) で囲まれた形で作成することができます。"
+    :description "Listは、関数または引用符 ( ' ) で囲まれた形で作成することができます。"
     :difficulty "初級"
     :tags []}
 
    {:id         5
-    :title       "conj on lists"
+    :title       "Listでのconj"
     :tests       ["(= __ (conj '(2 3 4) 1))"
                   "(= __ (conj '(3 4) 2 1))"]
-    :description "リストに対して操作する場合、conj関数は1つまたは複数の項目を先頭に「追加」した新しいリストを返します。"
+    :description "Listに対して操作する場合、conj関数は1つまたは複数の項目を先頭に「追加」した新しいListを返します。"
     :difficulty "初級"
     :tags []}
 
-   {:id 6 :title "Vectors"
+   {:id 6 :title "Vector"
     :tests ["(= [__] (list :a :b :c) (vec '(:a :b :c)) (vector :a :b :c))"]
-    :description "Vectors can be constructed several ways.
-You can compare them with lists."
+    :description "Vectorはいくつかの方法で構築することができます。
+                  Listと比較することができます。"
     :difficulty "初級"
     :tags []}
 
    {:id         7
-    :title       "conj on vectors"
+    :title       "Vectorでのconj"
     :tests       ["(= __ (conj [1 2 3] 4))"
                   "(= __ (conj [1 2] 3 4))"]
-    :description "When operating on a Vector,
-the conj function will return a new vector
-with one or more items \"added\" to the end."
+    :description "Vectorに対して操作する場合、
+                  conj関数は1つまたは複数の項目を末尾に「追加」した新しいVectorを返します。"
     :difficulty "初級"
     :tags []}
 
    {:id         8
-    :title       "Sets"
+    :title       "Set"
     :tests       ["(= __ (set '(:a :a :b :c :c :c :c :d :d)))"
                   "(= __ (clojure.set/union #{:a :b :c} #{:b :c :d}))"]
-    :description "Sets are collections of unique values."
+    :description "Setとは、ユニーク（一意）な値の集まりのことです。"
     :difficulty "初級"
     :tags []}
 
-   {:id 9 :title "conj on sets"
+   {:id 9 :title "Setでのconj"
     :tests ["(= #{1 2 3 4} (conj #{1 4 3} __))"]
-    :description "When operating on a set,
-the conj function returns a new set with one or more keys \"added\"."
+    :description "Setに対して操作する場合、
+                  conj関数は1つまたは複数のキーを「追加」した新しいSetを返します。"
     :difficulty "初級"
     :tags []}
 
-   {:id 10 :title "Maps"
+   {:id 10 :title "Map"
     :tests ["(= __ ((hash-map :a 10, :b 20, :c 30) :b))"
             "(= __ (:b {:a 10, :b 20, :c 30}))"]
-    :description "Maps store key-value pairs.
-Both maps and keywords can be used as lookup functions.
-Commas are whitespace."
+    :description "Mapはキーと値のペアを格納します。
+                  Mapとキーワードはどちらもルックアップ関数として使用できます。
+                  カンマは空白文字です。"
     :difficulty "初級"
     :tags []}
 
