@@ -19,3 +19,10 @@ URL: https://4clojure.siraken.net/
 （アクセスできない場合は https://siraken.github.io/4ever-clojure/ ）
 
 より適切な翻訳があれば、ぜひプルリクエストをいただけると嬉しいです。
+
+## 開発
+
+```bash
+npm install
+npx shadow-cljs watch :my-build
+```
