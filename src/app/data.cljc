@@ -78,11 +78,10 @@
     :difficulty "初級"
     :tags []}
 
-   {:id 11 :title "conj on maps"
+   {:id 11 :title "Mapでのconj"
     :tests ["(= {:a 1, :b 2, :c 3} (conj {:a 1} __ [:c 3]))"]
-    :description "When operating on a map,
-the conj function returns a new map
-with one or more key-value pairs \"added\"."
+    :description "Mapに対して操作する場合、
+                  conj関数は1つ以上のKey-Valueペアを「追加」した新しいMapを返します。"
     :difficulty "初級"
     :tags []}
 
