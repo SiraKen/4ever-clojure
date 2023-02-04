@@ -58,14 +58,16 @@
   [:div
    [:p
     "4clojureは永遠に！このウェブサイトは完全に静的で、sciを使ってコードを検証しています。
-     提案やプルリクエストは"
+     提案やプルリクエストは、本家リポジトリ(英語)の "
     [:a {:href "https://github.com/oxalorg/4ever-clojure"}
      "github.com/oxalorg/4ever-clojure"]
-    "まで！"]
+    " まで、日本語訳については "
+    [:a {:href "https://github.com/SiraKen/4ever-clojure"} "github.com/SiraKen/4ever-clojure"]
+    " まで！"]
    [:p
     "4ever-clojureは完全にブラウザで評価されることに注意してください。
      そのため、すべてのJavaの相互運用がうまくいくわけではありませんが、運が良ければJSでも同じように使えるものもあります。
-     詳細は"
+     詳細は "
     [:a {:href "https://cljs.info/cheatsheet/"} "cljs-cheatsheet"]
-    "をチェックしてください！"]
+    " をチェックしてください！"]
    [problem-list]])
