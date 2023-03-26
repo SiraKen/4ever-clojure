@@ -30,7 +30,7 @@
      "より❤を込めて"
      " | "
      "翻訳: "
-     [:a {:href "https://twitter.com/shirasawa_kento"} "@shirasawa_kento"]]]
+     [:a {:href "https://twitter.com/siraken0411"} "@siraken0411"]]]
    notification])
 
 (defn main []
